@@ -1,0 +1,25 @@
+{
+  "name": "sm-2",
+  "version": "0.1.0",
+  "description": "Typescript Package for SM-2 Spaced Repetition",
+  "keywords": [
+    "sm-2",
+    "flashcard",
+    "spaced-repetition"
+  ],
+  "homepage": "https://github.com/open-spaced-repetition/sm-2-ts#readme",
+  "bugs": {
+    "url": "https://github.com/open-spaced-repetition/sm-2-ts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-spaced-repetition/sm-2-ts.git"
+  },
+  "license": "MIT",
+  "author": "Joshua Hamilton",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
