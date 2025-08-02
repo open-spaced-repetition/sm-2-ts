@@ -1,0 +1,25 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/open-spaced-repetition/sm-2-ts/main/osr_logo.png" height="100" alt="Open Spaced Repetition logo"/>
+</div>
+<div align="center">
+
+# SM-2
+
+</div>
+<div align="center">
+  <em>🧠🔄 Build your own Spaced Repetition System in Typescript 🧠🔄   </em>
+</div>
+<br />
+<div align="center" style="text-decoration: none;">
+    <a href="https://github.com/open-spaced-repetition/sm-2-ts/blob/main/LICENSE" style="text-decoration: none;"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg"></a>
+</div>
+<br />
+
+## Versioning
+
+This package is currently unstable and adheres to the following versioning scheme:
+
+- **Minor** version will increase when a backward-incompatible change is introduced.
+- **Patch** version will increase when a bug is fixed or a new feature is added.
+
+Once this package is considered stable, the **Major** version will be bumped to 1.0.0 and will follow [semver](https://semver.org/).
