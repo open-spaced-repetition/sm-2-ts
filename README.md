@@ -16,6 +16,14 @@
 </div>
 <br />
 
+## Installation
+
+You can install the package using npm:
+
+```bash
+npm install @open-spaced-repetition/sm-2
+```
+
 ## Versioning
 
 This package is currently unstable and adheres to the following versioning scheme:
