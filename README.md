@@ -7,7 +7,7 @@
 
 </div>
 <div align="center">
-  <em>🧠🔄 Build your own Spaced Repetition System in Typescript 🧠🔄   </em>
+  <em>🧠🔄 The Classic SM-2 Spaced Repetition Algorithm in Typescript 🧠🔄</em>
 </div>
 <br />
 <div align="center" style="text-decoration: none;">
