@@ -16,6 +16,10 @@
 </div>
 <br />
 
+## Table of Contents
+- [Installation](#installation)
+- [Versioning](#versioning)
+
 ## Installation
 
 You can install the package using npm:
