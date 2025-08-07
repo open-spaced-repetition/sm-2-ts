@@ -1,3 +1,8 @@
 dist/
 node_modules/
 coverage/
+.DS_Store
+
+# Jupyter Notebook
+*.ipynb
+.ipynb_checkpoints
