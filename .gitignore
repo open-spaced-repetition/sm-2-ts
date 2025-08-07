@@ -6,3 +6,5 @@ coverage/
 # Jupyter Notebook
 *.ipynb
 .ipynb_checkpoints
+
+playground.ts
