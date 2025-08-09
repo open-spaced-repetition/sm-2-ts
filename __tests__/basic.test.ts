@@ -1,4 +1,4 @@
-import { Card, Scheduler } from "../src";
+import { Card, ReviewLog, Scheduler } from "../src";
 
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
@@ -107,5 +107,29 @@ test('test card serialize', () => {
 
   expect(reviewedCard.equals(copiedReviewedCard)).toBe(true);
   expect(card.equals(reviewedCard)).toBe(false);
+
+});
+
+test('test ReviewLog serialize', () => {
+
+  let card = new Card();
+
+  let result = Scheduler.reviewCard(card, 0);
+  card = result.card;
+  const reviewLog = result.reviewLog;
+
+  let json = JSON.stringify(reviewLog);
+  let parsedJson = JSON.parse(json);
+  const copiedReviewLog = ReviewLog.fromJSON(parsedJson);
+  expect(reviewLog.equals(copiedReviewLog)).toBe(true);
+
+  // (x2) perform the above tests once more with a ReviewLog from a reviewed card
+  result = Scheduler.reviewCard(card, 5);
+  const nextReviewLog = result.reviewLog;
+
+  json = JSON.stringify(nextReviewLog);
+  parsedJson = JSON.parse(json);
+  const copiedNextReviewLog = ReviewLog.fromJSON(parsedJson);
+  expect(nextReviewLog.equals(copiedNextReviewLog)).toBe(true);
 
 });
