@@ -86,3 +86,26 @@ test('test intervals', () => {
 ).toBe(true);
 
 });
+
+test('test card serialize', () => {
+
+  const card = new Card();
+
+  let json = JSON.stringify(card);
+  let parsedJson = JSON.parse(json);
+  const copiedCard = Card.fromJSON(parsedJson);
+
+  expect(card.equals(copiedCard)).toBe(true);
+
+  // (x2) perform the above tests once more with a reviewed card
+  const result = Scheduler.reviewCard(card,5);
+  const reviewedCard = result.card;
+
+  json = JSON.stringify(reviewedCard);
+  parsedJson = JSON.parse(json);
+  const copiedReviewedCard = Card.fromJSON(parsedJson);
+
+  expect(reviewedCard.equals(copiedReviewedCard)).toBe(true);
+  expect(card.equals(reviewedCard)).toBe(false);
+
+});
