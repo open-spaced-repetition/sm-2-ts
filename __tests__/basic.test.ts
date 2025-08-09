@@ -1,5 +1,7 @@
 import { Card, Scheduler } from "../src";
 
+const MS_PER_DAY = 1000 * 60 * 60 * 24;
+
 test('should create a card with default values', () => {
 
     const card = new Card();
@@ -32,7 +34,46 @@ test('test quickstart', () => {
     let timeDelta = due.getTime() - (Date.now());
 
     // card is due in 1 day
-    const MS_PER_DAY = 1000 * 60 * 60 * 24;
     expect(Math.ceil(timeDelta / MS_PER_DAY)).toEqual(1);
+
+});
+
+test('test intervals', () => {
+
+    let card = new Card();
+    let now = new Date();
+
+    let ratings = [
+            4,
+            3,
+            3,
+            4,
+            5,
+            3,
+            0,
+            1,
+            3,
+            3,
+            4,
+            5,
+            3,
+    ];
+
+    let ivlHistory: number[] = [];
+    for (let rating of ratings) {
+
+        let result = Scheduler.reviewCard(card, rating, now);
+        card = result.card;
+        let ivl = Math.ceil((card.due.getTime() - now.getTime()) / MS_PER_DAY);
+        ivlHistory.push(ivl);
+        now = card.due;
+
+    }
+
+    expect(ivlHistory).toEqual([
+      1, 0, 0, 6, 15,  0,
+      0, 0, 0, 0, 35, 86,
+      0
+    ]);
 
 });
