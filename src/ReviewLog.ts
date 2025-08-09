@@ -37,7 +37,7 @@ export class ReviewLog {
     toJSON(): {
         cardId: number,
         rating: number,
-        reviewDatetime: Date,
+        reviewDatetime: string,
         reviewDuration: number | null
     } {
 
