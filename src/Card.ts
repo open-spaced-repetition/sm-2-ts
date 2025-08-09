@@ -34,6 +34,17 @@ export class Card {
 
     }
 
+    equals(other: Card): boolean {
+
+        return this.cardId == other.cardId &&
+               this.n == other.n &&
+               this.EF == other.EF &&
+               this.I == other.I &&
+               this.due.getTime() == other.due.getTime() &&
+               this.needsExtraReview == other.needsExtraReview;
+
+    }
+
     toJSON(): {
         cardId: number,
         n: number,
