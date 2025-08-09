@@ -52,4 +52,20 @@ export class ReviewLog {
 
     }
 
+    static fromJSON(json: {
+        cardId: number,
+        rating: number,
+        reviewDatetime: Date,
+        reviewDuration: number | null
+    }): ReviewLog {
+
+        return new ReviewLog(
+            json.cardId,
+            json.rating,
+            json.reviewDatetime,
+            json.reviewDuration
+        );
+
+    }
+
 }
