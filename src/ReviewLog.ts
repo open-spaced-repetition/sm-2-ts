@@ -23,4 +23,15 @@ export class ReviewLog {
 
     }
 
+    clone(): ReviewLog {
+
+        return new ReviewLog(
+            this.cardId,
+            this.rating,
+            new Date(this.reviewDatetime),
+            this.reviewDuration
+        );
+
+    }
+
 }
