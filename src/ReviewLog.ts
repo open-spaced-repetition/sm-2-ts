@@ -14,4 +14,13 @@ export class ReviewLog {
 
     }
 
+    equals(other: ReviewLog): boolean {
+
+        return this.cardId == other.cardId &&
+               this.rating == other.rating &&
+               this.reviewDatetime.getTime() == other.reviewDatetime.getTime() &&
+               this.reviewDuration == other.reviewDuration;
+
+    }
+
 }
