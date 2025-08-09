@@ -62,7 +62,7 @@ export class ReviewLog {
         return new ReviewLog(
             json.cardId,
             json.rating,
-            json.reviewDatetime,
+            new Date(json.reviewDatetime),
             json.reviewDuration
         );
 
