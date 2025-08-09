@@ -34,5 +34,47 @@ export class Card {
 
     }
 
+    toJSON(): {
+        cardId: number,
+        n: number,
+        EF: number,
+        I: number,
+        due: string,
+        needsExtraReview: boolean
+    } {
+
+        return {
+
+            cardId: this.cardId,
+            n: this.n,
+            EF: this.EF,
+            I: this.I,
+            due: this.due.toISOString(),
+            needsExtraReview: this.needsExtraReview
+
+        };
+
+    }
+
+    static fromJSON(json: {
+        cardId: number,
+        n: number,
+        EF: number,
+        I: number,
+        due: string,
+        needsExtraReview: boolean
+    }): Card {
+
+        return new Card(
+            json.cardId,
+            json.n,
+            json.EF,
+            json.I,
+            new Date(json.due),
+            json.needsExtraReview
+        );
+
+    }    
+
 
 }
