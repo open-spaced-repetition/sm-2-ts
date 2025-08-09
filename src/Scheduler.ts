@@ -9,7 +9,7 @@ export class Scheduler {
         reviewDatetime: Date | null = null, 
         reviewDuration: number | null = null):  {card: Card, reviewLog: ReviewLog} {
 
-        card = structuredClone(card);
+        card = card.clone();
 
         if (reviewDatetime == null) {
             reviewDatetime = new Date();

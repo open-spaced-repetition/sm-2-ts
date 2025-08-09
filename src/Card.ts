@@ -45,6 +45,19 @@ export class Card {
 
     }
 
+    clone(): Card {
+
+        return new Card(
+            this.cardId,
+            this.n,
+            this.EF,
+            this.I,
+            new Date(this.due),
+            this.needsExtraReview
+        );
+
+    }
+
     toJSON(): {
         cardId: number,
         n: number,
