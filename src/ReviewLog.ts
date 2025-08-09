@@ -34,4 +34,22 @@ export class ReviewLog {
 
     }
 
+    toJSON(): {
+        cardId: number,
+        rating: number,
+        reviewDatetime: Date,
+        reviewDuration: number | null
+    } {
+
+        return {
+
+            cardId: this.cardId,
+            rating: this.rating,
+            reviewDatetime: this.reviewDatetime.toISOString(),
+            reviewDuration: this.reviewDuration
+
+        };
+
+    }
+
 }
