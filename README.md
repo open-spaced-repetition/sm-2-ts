@@ -33,9 +33,9 @@ npm install @open-spaced-repetition/sm-2
 
 ## Quickstart
 
-Import FSRS modules and create a new Card object
+Import SM-2 modules and create a new Card object
 ```ts
-import { Scheduler, Card, ReviewLog } from "./src";
+import { Scheduler, Card, ReviewLog } from "@open-spaced-repetition/sm-2";
 
 // NOTE: all new cards are 'due' immediately upon creation
 let card = new Card();
