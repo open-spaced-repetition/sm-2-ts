@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/open-spaced-repetition/py-fsrs/main/osr_logo.png" height="100" alt="Open Spaced Repetition logo"/>
+  <img src="https://raw.githubusercontent.com/open-spaced-repetition/sm-2-ts/main/osr_logo.png" height="100" alt="Open Spaced Repetition logo"/>
 </div>
 <div align="center">
 
