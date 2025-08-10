@@ -16,8 +16,11 @@
 </div>
 <br />
 
+**Typescript package implementing the classic <a href="https://super-memory.com/english/ol/sm2.htm">SM-2</a> algorithm for spaced repetition scheduling.**
+
 ## Table of Contents
 - [Installation](#installation)
+- [Quickstart](#quickstart)
 - [Versioning](#versioning)
 
 ## Installation
@@ -26,6 +29,48 @@ You can install the package using npm:
 
 ```bash
 npm install @open-spaced-repetition/sm-2
+```
+
+## Quickstart
+
+Import FSRS modules and create a new Card object
+```ts
+import { Scheduler, Card, ReviewLog } from "./src";
+
+// NOTE: all new cards are 'due' immediately upon creation
+let card = new Card();
+```
+
+Choose a rating and review the card with the scheduler
+
+```ts
+// 5 - perfect response
+// 4 - correct response after a hesitation
+// 3 - correct response recalled with serious difficulty
+// 2 - incorrect response; where the correct one seemed easy to recall
+// 1 - incorrect response; the correct one remembered
+// 0 - complete blackout.
+
+const rating = 5;
+
+const result = Scheduler.reviewCard(card, rating);
+card = result.card;
+const reviewLog = result.reviewLog;
+
+console.log(`Card rated ${reviewLog.rating} at ${reviewLog.reviewDatetime}`);
+// > Card rated 5 at Sat Aug 09 2025 17:03:30 GMT-0700 (Pacific Daylight Time)
+```
+
+See when the card is due next
+
+```ts
+console.log(`Card due on ${card.due}`);
+// > Card due on Sun Aug 10 2025 17:03:30 GMT-0700 (Pacific Daylight Time)
+
+const MS_PER_HOUR = 1000 * 60 * 60;
+const intervalLength = (card.due.getTime() - Date.now()) / MS_PER_HOUR;
+console.log(`Card due in ${intervalLength} hours`);
+// > Card due in 23.99999972222222 hours
 ```
 
 ## Versioning
