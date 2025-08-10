@@ -1,6 +1,6 @@
 {
   "name": "@open-spaced-repetition/sm-2",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Typescript Package for SM-2 Spaced Repetition",
   "keywords": [
     "sm-2",
