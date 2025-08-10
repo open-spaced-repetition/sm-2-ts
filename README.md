@@ -55,7 +55,7 @@ const rating = 5;
 
 const result = Scheduler.reviewCard(card, rating);
 card = result.card;
-const reviewLog = result.reviewLog;
+let reviewLog = result.reviewLog;
 
 console.log(`Card rated ${reviewLog.rating} at ${reviewLog.reviewDatetime}`);
 // > Card rated 5 at Sat Aug 09 2025 17:03:30 GMT-0700 (Pacific Daylight Time)
@@ -71,6 +71,22 @@ const MS_PER_HOUR = 1000 * 60 * 60;
 const intervalLength = (card.due.getTime() - Date.now()) / MS_PER_HOUR;
 console.log(`Card due in ${intervalLength} hours`);
 // > Card due in 23.99999972222222 hours
+```
+
+### Serialization
+
+`Card` and `ReviewLog` objects are json-serializable for easy database storage and network requests
+
+```ts
+// serialize before storage / request
+const cardJson = JSON.stringify(card);
+const reviewLogJson = JSON.stringify(reviewLog);
+
+// deserialize after storage / request
+const cardParsedJson = JSON.parse(cardJson);
+const reviewLogParsedJson = JSON.parse(reviewLogJson);
+card = Card.fromJSON(cardParsedJson);
+reviewLog = ReviewLog.fromJSON(reviewLogParsedJson);
 ```
 
 ## Versioning
