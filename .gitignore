@@ -8,3 +8,6 @@ coverage/
 .ipynb_checkpoints
 
 playground.ts
+
+# npm pack output
+*.tgz
